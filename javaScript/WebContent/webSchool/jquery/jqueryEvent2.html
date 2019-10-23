@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryEvent2.html</title>
+    <script src="jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#p1").on("click", function () {
+            console.log("p1 clicked.")
+        })
+        $("#p1").on({
+            "mousedown": function () {
+                $("#show").html("MouseDown over p1").css("backgroundColor", "red");
+            },
+            "mouseup": function () {
+                $("#show").html("MouseUp over p1").css("backgroundColor", "yellow");
+            },
+            "mouseenter": function () {
+                $("#show").html("MouseEnter over p1").css("backgroundColor", "green");
+            },
+            "mouseleave": function () {
+                $("#show").html("Mouseleave over p1").css("backgroundColor", "purple");
+            }
+        })  //여러개의 값을 넣을때는 {}
+    });
+</script>
+
+<body>
+    <p id="p1">This is paragraph</p><br><br>
+    <div id="show"></div>
+    <button id="btn1">Btn1</button>
+    <button id="btn2">Btn2</button><br>
+    Name:<input type="text" name="firstName"><br>
+    Email:<input type="email" name="email"><br>
+    <script>
+        $("input").on({
+            "focus": function () {
+                $(this).css("backgroundColor", "yellow");
+            },
+            "blur": function () {
+                $(this).css("backgroundColor", "silver");
+            }
+        })
+        $("#btn1").click(function () {
+            $("#p1").click();
+        })
+        $("#btn2").click(function () {
+            $("#p1").mousedown();
+        })
+    </script>
+</body>
+
+</html>

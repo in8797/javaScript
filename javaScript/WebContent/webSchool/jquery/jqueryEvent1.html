@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#p1").mousedown(function(){
+            $("#show").html("MouseDown over p1").css("backgroundColor","red");
+        })
+        $("#p1").mouseup(function(){
+            $("#show").html("MouseUp over p1").css("backgroundColor","yellow");
+        })
+        $("#p1").mouseover(function(){
+            $("#show").html("MouseOver over p1").css("backgroundColor","green");
+        })
+        $("#p1").mouseout(function(){
+            $("#show").html("MouseOut over p1").css("backgroundColor","purple");
+        })
+    });
+</script>
+<body>
+    <p id="p1">This is paragraph</p><br><br>
+    <div id="show"></div>
+    <button>DoubleClick</button>
+    <script>
+        $("button").dblclick(function () {
+            var p1s = $("#p1").html();
+            $("#show").html(p1s);
+        });
+    </script>
+</body>
+
+</html>

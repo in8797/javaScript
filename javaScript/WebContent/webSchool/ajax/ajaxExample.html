@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button onclick="createTable()">Create Table</button><br> -->
+
+    <button id="btn" onclick="loadXML()">Get XML</button>
+    <p id="showXML"></p>
+    <script>
+        function loadXML() {
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getXML(this);
+                }
+            }
+            xhtp.open("get", "cd_catalog.xml");
+            xhtp.send();
+        }
+        function getXML(elem) {
+            // console.log(elem.responseXML);
+            var xml = elem.responseXML;
+            var cds = xml.getElementsByTagName("CD");
+            console.log(cds[0].childNodes[1].childNodes[0].nodeValue);
+            console.log(cds);
+
+            var tag = "<table border=1><tr><th>Title</th><th>Artist</th><th>Country</th><th>Conpany</th><th>Price</th><th>Year</th></tr>"
+            // tag+="<tr><td>"+ cds[0].childNodes[1].childNodes[0].nodeValue+"</td></tr>";
+            for (var i = 0; i < cds.length; i++) {
+                //     tag += "<tr><td>" + cds[i].childNodes[1].childNodes[0].nodeValue + "</td>";
+                tag += "<tr>";
+                for (var j = 0; j < cds[i].childNodes.length; j++) {
+                    if ((j % 2) == 1) {
+                        tag += "<td>" + cds[i].childNodes[j].childNodes[0].nodeValue + "</td>";
+                        // tag +="<tr><td>"+cds[j].childNodes[i].childNodes[0].nodeValue+"</td></tr>";
+                    }
+                    tag += "</tr>";
+                }
+                tag += "</table>";
+                document.getElementById("showXML").innerHTML = tag;
+            }
+        }
+    </script>
+</body>
+
+</html>

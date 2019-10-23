@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color: red; width: 120px; height: 20px; padding: 40px;">MouseOver</div>
+    <br>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+        style="background-color: red; width: 120px; height: 20px; padding: 40px;">Click</div>
+    <br>
+    <!-- Name: <input onfocus="focus(this)" onblur="blur(this)" type="text" id="fName"> -->
+    Name: <input onfocus="onFocus()" onblur="onBlur()" type="text" id="fName">
+    <br>
+    <script>
+        function mDown(a) {
+            a.style.backgroundColor = "yellow";
+            a.innerHTML = "Thank You";
+        }
+        function mUp(a) {
+            a.style.backgroundColor = "red";
+            a.innerHTML = "Click";
+        }
+        function mOver(a) {
+            console.log(a);
+            a.innerHTML = "Thank You";
+        }
+        function mOut(a) {
+            console.log(a);
+            a.innerHTML = "Mouse Over";
+        }
+        // function focus(a) {
+        //     a.style.background = "yellow";
+        // }
+        // function blur(a) {
+        //     a.style.background = "blue";
+        // }
+        function onFocus() {
+            var elem = document.getElementById('fName');
+            elem.style.background = "yellow";
+        }
+        function onBlur() {
+            var elem = document.getElementById('fName');
+            elem.style.background = "blue";
+        }
+    </script>
+</body>
+
+</html>

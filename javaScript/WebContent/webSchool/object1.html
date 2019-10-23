@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="father"></p>
+    <p id="mother"></p>
+    <script>
+        function Person(first, last, age) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+        }
+        var father = new Person("삼원", "홍", 50);
+        var mother = new Person("순희", "김", 45);
+        document.getElementById('father').innerHTML = father.firstName +" "+ father.lastName;
+        document.getElementById('mother').innerHTML = mother.firstName +" "+ mother.lastName;
+        father.fullName = function() { return this.firstName + " " + this.lastName + " " + this.age };
+        console.log(father.fullName());
+    </script>
+</body>
+
+</html>

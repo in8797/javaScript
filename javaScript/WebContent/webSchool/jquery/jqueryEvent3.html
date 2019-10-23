@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#oldBtn").click(function () {
+                newBtn();
+            })
+            // $("#newBtn").click(function () {
+            //     alert("new btn clicked.");
+            // })
+            $("body").on("click", "#newBtn", function () { // on(이벤트,대상)
+                alert("new btn clicked."); // 창을 띄워서 출력
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <p id="show"></p> -->
+    <button id="oldBtn">OldButton</button>
+    <input type="text" name="firstName" value="Scott">
+    <button id="exist">ExistBtn</button>
+    <div id="upper">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    <script>
+        function newBtn() {
+            var newBtn = $("<button>").text("NewBtn"); //<button id="newBtn">NewBtn</button>
+            newBtn.attr("id", "newBtn");
+            // text(), html(), val(), attr("id값"), prop("")
+            var div = $("<div>").html("<h3>Hello</h3>")
+            // var div = $("<div>").html($("<h3>").html("Hello")); 같음
+
+            $("body").append(div); // 뒤에다 삽입
+            $("body").prepend(newBtn); // 앞에다 삽입
+            console.log($("input[name]").val());
+            $("input[name]").val("Charlie");
+            console.log(newBtn.attr("id"));
+            // remove() 요소를 제거
+            $("#exist").remove();
+            // empty() 하위요소를 제거
+            $("#upper").empty();
+        }
+    </script>
+</body>
+
+</html>

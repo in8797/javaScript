@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>XmlHttpRequest</h2>
+    <button onclick="loadAjax()">Click</button>
+    <p id="show"></p>
+    <script>
+        function loadAjax() {
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                console.log(xhtp.readyState, xhtp.status);
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    // document.getElementById("show").innerHTML = this.responseText;
+                }
+            }
+            xhtp.open("get", "ajax_info.txt");
+            xhtp.send();
+        }
+
+    </script>
+</body>
+
+</html>

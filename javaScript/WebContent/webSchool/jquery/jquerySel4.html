@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            // $("#btn1").click(function () {
+            //     $("[href]").hide();
+            // })
+            // $("#btn2").click(function () {
+            //     $("[href]").show();
+            // })
+            $("button:first").click(function(){
+                // $("a[target='_blank']").hide();
+                $("a[href$=com]").hide(); // ^는 시작을 표현, $는 끝을 표현
+            })
+        });
+        
+    </script>
+</head>
+
+<body>
+    <button id=btn1>Click</button>
+    <button id=btn2>Show</button>
+    <p>a paragraph</p>
+    <p>another paragraph</p>
+    <p><a href="https://www.daum.net" target="_blank">Daum</a></p>
+    <p><a href="http://www.naver.com" target="parnet">Naver</a></p>
+
+</body>
+
+</html>

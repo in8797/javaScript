@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">Click</button>
+    <p id="show"></p>
+    시간: <input id="display" type="button">
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", displayDate);
+        function displayDate() {
+            var ddd = new Date();
+            document.getElementById("display").value = ddd.getFullYear() + "년" + (ddd.getMonth() + 1) + "월" + ddd.getDate() + "일" + ddd.getHours() + "시" + ddd.getMinutes() + "분";
+
+        }
+    </script>
+</body>
+
+</html>

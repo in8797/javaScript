@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>javaScript addEvent</h2>
+    <button id="btn">Click</button>
+    <p id="show"></p>
+    <script>
+        var x = document.getElementById("btn");
+        x.addEventListener("mouseover", mOver);
+        x.addEventListener("click", mClick);
+        x.addEventListener("mouseout", mOut);
+
+        function mOver() {
+            document.getElementById("show").innerHTML = "Mouse Over!";
+        }
+        function mClick() {
+            document.getElementById("show").innerHTML = "Mouse Click!";
+        }
+        function mOut() {
+            document.getElementById("show").innerHTML = "Mouse Out!";
+        }
+    </script>
+
+
+
+</body>
+
+</html>

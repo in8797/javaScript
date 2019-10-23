@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="out.js"></script>
+    <script>
+        function func1() {
+            document.getElementById('demo').innerHTML = 'Hello World';
+        }
+        function turnon() {
+            document.getElementById('img').src = 'https://www.w3schools.com/js/pic_bulbon.gif';
+        }
+        function turnoff() {
+            document.getElementById('img').src = 'https://www.w3schools.com/js/pic_bulboff.gif';
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="demo">JavaScript can Everything</p>
+    <button onclick="func1()">Click</button>
+    <br><br>
+    <img id="img" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
+    <br>
+    <button onclick="turnon()">TurnOn</button>
+    <button onclick="turnoff()">TurnOff</button>
+
+    <button onclick="sizeUp()">fontSizeup</button>
+    <button onclick="hide()">Hide</button>
+
+</body>
+
+</html>

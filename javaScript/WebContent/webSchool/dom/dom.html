@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+    .intro {
+        color: blueviolet;
+    }
+    #intro {
+        color : red;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Daum</h1>
+    <a id="daum" href="http://www.daum.net">DAUM</a>
+    <p id="intro">Hello World</p>
+    <div id="main">
+        <p class="intro">The DOM is useful</p>
+        <p class="intro">
+            This is <b> getElementByIdTagName</b> method.
+        </p>
+        <div class="intro">another class intro</div>
+    </div>
+    <form id = "frm" action="action.jsp">
+        FirstName:<input type="text" name="fName" value="kildong"><br>
+        LastName:<input type="text" name="lName" value="hong"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <form>
+        Name:<input type="text" name="name" value="name">
+    </form>
+    <button onclick="myForm()">Click</button>
+    <hr>
+    <p id="show1"></p>
+    <p id="show2"></p>
+    <p id="show3"></p>
+    <p id="show4"></p>
+    <p id="show5"></p>
+    <script>
+        // getElementById Element 선택
+        var elem = document.getElementById("intro").innerHTML;
+        document.getElementById("show1").innerHTML = elem;
+
+        // getElementByIdTagName Element 선택
+        var elem1 = document.getElementsByTagName("p");
+        console.log(elem1);
+        document.getElementById("show2").innerHTML = elem1[1].innerHTML;
+
+        // getElementByClasNmae
+        var elem2 = document.getElementsByClassName("intro");
+        var tag = "";
+        for (var i = 0; i < elem2.length; i++) {
+            tag += elem2[i].innerHTML + " <br> ";
+        }
+        document.getElementById("show3").innerHTML = tag;
+
+        //css 선택자..
+        var elem3 = document.querySelectorAll("p.intro"); // 컬렉션타입
+        var sel = "";
+        for (var i = 0; i < elem3.length; i++) {
+            sel += elem3[i].innerHTML + " <br> ";
+        }
+        document.getElementById("show4").innerHTML = sel;
+        function myForm() {
+            var x= document.forms["frm"];1
+            console.log(x.elements[0].value);
+            console.log(x.elements.item(0).value);
+            console.log(x.elements.nameItem("Fname").value);
+        }
+
+        // var y = document.forms;
+        console.log(document.forms[1].elements[0].value);
+
+
+
+
+        var daum = document.getElementById("daum");
+        console.log(daum.innerHTML);
+    </script>
+</body>
+
+</html>

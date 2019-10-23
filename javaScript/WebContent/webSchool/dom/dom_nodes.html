@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addRow()">click</button>
+    <button onclick="addRow1()">click1</button>
+    <button onclick="removeRow()">Remove Click</button>
+    <div id="div1">
+        <p id="p1">This is paragraph</p>
+        <p id="p2">Another paragraph</p>
+    </div>
+    <button onclick="insertBefore1()">insertBefore1</button>
+    <table id="tab" border=1>
+        <tr id="tr1">
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+    </table>
+    <script>
+        function insertBefore1() {
+            var tr1 = document.getElementById("tr1");
+            var td1= document.createElement("td");
+            td1.appendChild(document.createTextNode("Zero")); //document.createTextNode("Zero") 를 따로 선언해줘도 됨.
+            var td2 = document.getElementsByTagName("td")[0];
+            tr1.insertBefore(td1, td2);
+        }
+        function removeRow() {
+            var div1 = document.getElementById("div1");
+            var p2= document.getElementById("p2");
+            div1.removeChild(p2);
+            // div1.remove(); //자식삭제할때
+        }
+        function addRow() {
+            var elem = document.createElement("p");
+            var text = document.createTextNode("New paragraph");
+            elem.setAttribute("id","p3");
+            elem.appendChild(text); //<p>"New paragraph"</p>
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem);
+        }
+        function addRow1() {
+            var elem = document.createElement("p");
+            var text = document.createTextNode("Third paragraph");
+            elem.appendChild(text);
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem);
+        }
+    </script>
+</body>
+</html>

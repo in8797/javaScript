@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body id="bdy">
+    <button onclick="createTable()">Create Table</button><br>
+    FName : <input type="text" id="firstname" name="FirstName"><br>
+    LName : <input type="text" id="lastname" name="lastName"><br>
+    Salary : <input type="text" id="salary" name="salary"><br>
+    <button id="btn">addRow</button>
+    <button id="delete">deleteRow</button>
+
+    <script>
+
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", addData);
+        var del = document.getElementById("delete");
+        del.addEventListener("click", delData);
+
+        function delData() {
+            var trs = document.getElementsByTagName("tr");
+            var tab = document.getElementById("tbl");
+            tab.removeChild(trs[1]);
+
+        }
+        function addData() {
+            var fname = document.getElementById("firstname").value;
+            var lname = document.getElementById("lastname").value;
+            var salary = document.getElementById("salary").value;
+            console.log(fname, lname, salary);
+            var td1 = document.createElement("td");
+            var tdVal1 = document.createTextNode(fname);
+            td1.appendChild(tdVal1);
+
+            var td2 = document.createElement("td");
+            var tdVal2 = document.createTextNode(lname);
+            td2.appendChild(tdVal2);
+
+            var td3 = document.createElement("td");
+            var tdVal3 = document.createTextNode(salary);
+            td3.appendChild(tdVal3);
+
+            var td4 = document.createElement("button");
+            var tdVal4 = document.createTextNode("Del");
+            td4.appendChild(tdVal4);
+            td4.addEventListener("click", delFunc);
+
+            var rows = document.getElementsByTagName("tr");
+            var rowId = rows.length;
+            td4.setAttribute("id", rowId);
+
+            var tr1 = document.createElement("tr");
+            tr1.setAttribute("id", "tr" + rowId);
+            tr1.append(td1, td2, td3, td4);
+
+            tr1.addEventListener("click", showFunc);
+
+
+            // document.getElementById("tbl").append(tr1);
+
+            tab = document.getElementById("tbl");
+            tab.append(tr1);
+
+            function delFunc() {
+                // console.log(this.parentNode.getAttribute("id"));
+                // var id= this.parentNode.getAttribute("id");
+                // var trId= document.getElementById("id");
+                // console.log(trId);
+                this.parentNode.remove();
+            }
+            function showFunc() {
+                this.remove();
+            }
+        }
+        function createTable() {
+            var $table = document.createElement("table");
+            // $table.setAttribute({"id":"tbl","border":"1"});// { 속성:속성값, 속성:속성값,}
+            $table.setAttribute("id", "tbl");
+            $table.setAttribute("border", "1");
+
+
+            var th1 = document.createElement("th");
+            var val1 = document.createTextNode("FirstName");
+            th1.appendChild(val1);
+
+            var th2 = document.createElement("th");
+            var val2 = document.createTextNode("LastName");
+            th2.appendChild(val2);
+
+            var th3 = document.createElement("th");
+            var val3 = document.createTextNode("Salary");
+            th3.appendChild(val3);
+
+            var tr = document.createElement("tr");
+            tr.append(th1, th2, th3);
+            $table.append(tr);
+
+
+
+            var td1 = document.createElement("td");
+            var tdVal1 = document.createTextNode("Scott");
+            td1.appendChild(tdVal1);
+
+            var td2 = document.createElement("td");
+            var tdVal2 = document.createTextNode("Tiger");
+            td2.appendChild(tdVal2);
+
+            var td3 = document.createElement("td");
+            var tdVal3 = document.createTextNode("5000");
+            td3.appendChild(tdVal3);
+
+            var tr1 = document.createElement("tr");
+            tr1.append(td1, td2, td3);
+            $table.append(tr1);
+
+
+
+            document.getElementById("bdy").append($table);
+
+        }
+
+    </script>
+</body>
+
+</html>

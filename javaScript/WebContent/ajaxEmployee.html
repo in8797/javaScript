@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var xhtp = new XMLHttpRequest();
+		xhtp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var data = JSON.parse(this.responseText);
+				console.log(data);
+			}
+		}
+		xhtp.open("get", "EmpServlet");
+		xhtp.send();
+	</script>
+</body>
+</html>

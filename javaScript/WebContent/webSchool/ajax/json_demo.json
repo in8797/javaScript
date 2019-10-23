@@ -1,0 +1,9 @@
+{
+    "name":"Scott",
+    "age":30,
+    "pets": [
+        {"animal":"dog", "name":"balbari"},
+        {"animal":"cat", "name":"yaong"},
+        {"animal":"hamster", "name":"lily"}
+    ]
+}

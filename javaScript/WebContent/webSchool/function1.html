@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show1"></div>
+    <div id="show2"></div>
+    <script>
+        var result = calSum(1, 4, 2, 43, 23, 92); // sum(int...num)
+        function calSum() {
+            var len = arguments.length;
+            var total = 0;
+            for (var i = 0; i < len; i++) {
+                total += arguments[i];
+            }
+            return total;
+        }
+        document.getElementById('show1').innerHTML = "합은 : " + result;
+
+        var max = calMax(1, 4, 2, 43, 92, 23);
+        function calMax() {
+            var len = arguments.length;
+            var m = 0;
+            for (var i = 0; i < len; i++) {
+                // m = (arguments[i] > m ? arguments[i] : m);
+                if (m < arguments[i]) {
+                    m = arguments[i];
+                }
+            }
+            return m;
+        }
+        document.getElementById('show2').innerHTML = "최댓값 : " + max;
+        document.write(calMax(1,2,7,4));
+
+    </script>
+</body>
+
+</html>

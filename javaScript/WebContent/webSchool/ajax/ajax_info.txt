@@ -1,0 +1,3 @@
+<h1>Ajax</h1>
+<p>Ajax is not program language</p>
+<p>Ajax is Asynchronous Javascript And XML</p>

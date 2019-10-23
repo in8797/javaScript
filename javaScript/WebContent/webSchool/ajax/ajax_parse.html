@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var xhtp = new XMLHttpRequest();
+        xhtp.onreadystatechange = function () {
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                var obj = JSON.parse(this.responseText);
+                console.log(obj);
+
+            }
+        }
+        xhtp.open("get", "MOCK_DATA.json");
+        xhtp.send();
+        function add() {
+            console.log(obj);
+            var table = document.createElement("table");
+            table.setAttribute("border", 1);
+            for (var i = 0; i < obj.length; i++) {
+                var tr = document.createElement("tr");
+
+                for (field in obj[i]) {
+                    var td = document.createElement("td");
+                    var val = document.createTextNode(obj[i][field]);
+                    td.appendChild(val);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+        }
+    </script>
+</body>
+
+</html>

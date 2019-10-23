@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <div id="arrow"></div>
+
+    <script>
+        var cars = ['Saab', 'Volvo', 'BMW', 'Benz'];
+        for (var i = 0; i < cars.length;) {
+            console.log(cars[i++]);
+        }
+        console.log("=======================");
+
+        var flowers = new Array('sunflower', 'rose', 'lily', 'tulip');
+        var j = 0;
+        for (; j < flowers.length;) {
+            console.log(flowers[j++]);
+        }
+        flowers[0] = 'moonflower';
+        var text = "<ul>";
+        for (var i = 0; i < flowers.length;) {
+            text += "<li>" + flowers[i++] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("show").innerHTML = text;
+        console.log("=======================");
+
+        var myArr = new Array();
+        // console.log(Date());
+        function myFunc() {
+            return 3 + 5;
+        }
+        myArr[0] = Date();
+        myArr[1] = myFunc;
+        myArr[2] = cars;
+        for (var i = 0; i < myArr.length; i++) {
+            console.log(myArr[i]);
+        }
+        console.log(myArr[2][0]);
+        console.log("=======================");
+
+        var carsort = cars.sort(); // cars를 정렬
+        console.log(carsort);
+
+        console.log("=======================");
+        flowers.forEach(function (v, i) { // 첫번째값 value 값, 두번째값 index값
+            console.log(v, i);            // forEach는 배열의 각 값에 대하여 반복작업 함
+        });
+        var tag= "<table border=1>";
+        tag += "<tr><th>index</th><th>value</th>";
+        flowers.forEach( (v, i) => {
+            console.log(v, i);
+            tag += "<tr><td>" + i + "</td><td>" + v + "</td></tr>";
+        });
+        tag += "</table>";
+        document.getElementById("arrow").innerHTML = tag;
+
+
+    </script>
+</body>
+
+</html>

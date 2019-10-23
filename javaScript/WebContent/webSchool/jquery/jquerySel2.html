@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#btn1").click(function () {
+            //     $("h2").hide();
+            // })
+            // $("#btn2").click(function () {
+            //     $("h2").show();
+            // })
+            // $("p.int").click(function(){ // ( )공란은 자손
+            //     // $(this).hide();
+            //     console.log(this);
+            // })
+            var elem = $("p").eq(0)
+            console.log(elem);
+            elem.click(function () {
+                $(this).hide();
+
+            })
+        });    
+    </script>
+</head>
+
+<body>
+    <h2>a Heading</h2>
+    <p class="int">a Paragraph</p>
+    <p>a Another</p>
+    <h2 class="int">Another Heading</h2>
+    <button id="btn1">Click</button>
+    <button id="btn2">Click</button>
+
+</body>
+
+</html>

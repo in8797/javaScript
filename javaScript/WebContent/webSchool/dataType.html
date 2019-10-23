@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var len = 16;
+        console.log(typeof len);
+        len = "sixteen";
+        console.log(typeof len);
+        len = (16 > 15);
+        console.log(typeof len);
+        len = null;
+        console.log(typeof len);
+        console.log(typeof leng);
+
+        var cars = ["K5", "SM5", "sonata"];
+        console.log(cars[0]);
+        cars[0] = "k6";
+        console.log(cars[0]);
+
+        var person = {
+            firstName : "charles",
+            lastName :  "Choi",
+            age : 35,
+            fullName : function() { return this.firstName + " - " + this.lastName }
+        }
+        console.log(person.firstName);
+        console.log(person["lastName"]);
+        console.log(person.age);
+        console.log(person.fullName());
+
+
+
+    </script>
+</body>
+
+</html>

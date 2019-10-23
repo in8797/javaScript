@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // var val1 = $("#tit").html(); // id값은 한건만 가져옴
+            // console.log(val1);
+            // var val2 = $(".tit").eq(1).html();
+            // console.log(val2);
+            var val1 = $("div>h1").eq(1).html();
+            // console.log(val3);
+            // var val4 = $("h1").html();
+            // console.log(val4);
+            var val2 = $("#divs").children().eq(0).html();
+            console.log(val2);
+            var val3 = $("#spn").nextUntil("#h5"); //prev() <- 앞에것 next() <- 뒤에것 nextAll() <- id값기준으로 뒤에있는것전부
+            console.log(val3);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>제이쿼리</h1>
+    <h1 id="tit">아이디값</h1>
+    <h1 class="tit">클래스값1</h1>
+    <h1 class="tit">클래스값2</h1>
+
+    <div id="divs">
+        <h1>요소값</h1>
+        <span id="spn">
+            <h1>요소값2</h1>
+        </span>
+        <h1>요소값3</h1>
+        <h1>요소값4</h1>
+        <h1 id="h5">요소값5</h1>
+        <h1>요소값6</h1>
+    </div>
+</body>
+
+</html>

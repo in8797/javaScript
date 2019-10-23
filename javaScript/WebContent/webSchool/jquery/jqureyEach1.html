@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryEach1.html</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            color: red;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bolder;
+            width: 300px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("div").on("click", function () {
+                // $("div").each(function (a, b) {
+                $.each($("div"), function (a, b) {
+                    // console.log(a, b);
+                    if ($(this).css("color") == "rgb(255, 0, 0)")
+                        $(this).css("color", "blue");
+                    else
+                        $(this).css("color", "red");
+                    // console.log($(this).text());
+                })
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div>Welcome Home1</div>
+    <div>Welcome Home2</div>
+    <div>Welcome Home3</div>
+    <script>
+        var nameAry = ['홍길동', '김길동', '박길동'];
+        $.each(nameAry, function (i, e) {
+            console.log(i, e);
+        });
+    </script>
+</body>
+
+</html>
