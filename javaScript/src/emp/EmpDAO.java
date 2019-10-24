@@ -18,7 +18,7 @@ public class EmpDAO {
 	public void updateEmp(Employee emp) {
 		conn = DAO.getConnect();
 		String sql = "update emp_temp set salary = ? , email = ? where employee_id = ?";
-		try {
+		try {								//변경할 값 					변경할 위치
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, emp.getSalary());
 			pstmt.setString(2, emp.getEmail());
