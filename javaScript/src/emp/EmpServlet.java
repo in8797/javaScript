@@ -33,12 +33,14 @@ public class EmpServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// 한글 깨질때 UTF-8 변경ㄹ
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();	// data 가져오는것 
 		EmpDAO dao = new EmpDAO();	// data 가져오는것 
 		List<Employee> list = dao.getEmpList();	// data 가져오는것 
 		out.println(JSONArray.fromObject(list));
-		
-		
+				
 	}
 
 	/**

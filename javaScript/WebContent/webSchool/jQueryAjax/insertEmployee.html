@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>InsertEmployee.html</title>
+<script src="../jquery/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("input:button").on("click", function() {
+			var params = $("#frm").serialize();
+			console.log(params);
+			$.ajax({
+				url : "InsertEmpServ",
+				type : "post",
+				data : params,
+				success : function() {
+					location.href = "listEmployee.html";
+					console.log("success");
+				}
+			})
+		})
+	});
+</script>
+</head>
+<body>
+	<a href="listEmployee.html">리스트</a><br>
+	<form id="frm" action="">
+		<table border="1">
+			<tr>
+				<td>firstName:</td>
+				<td><input type="text" name="firstName"></td>
+			</tr>
+			<tr>
+				<td>lastName:</td>
+				<td><input type="text" name="lastName"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>HireDate:</td>
+				<td><input type="date" name="hireDate"></td>
+			</tr>
+			<tr>
+				<td>Job:</td>
+				<td><input type="text" name="jobId" value="IT_PROG"></td>
+			</tr>
+			<tr>
+				<td>Salary:</td>
+				<td><input type="text" name="salary" value="1000"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="입력"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
