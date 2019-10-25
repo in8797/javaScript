@@ -23,6 +23,9 @@
 				success: function () {
 					console.log("completed.");
 					location.href = "listEmployee.html";
+					
+					
+					
 
 				}
 			})
